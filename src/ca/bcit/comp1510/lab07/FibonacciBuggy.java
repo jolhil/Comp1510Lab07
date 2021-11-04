@@ -23,8 +23,8 @@ import java.util.Scanner;
 public class FibonacciBuggy {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n=0; 
-        while (n > 2) {
+        int n = scanner.nextInt();
+        while (n < 2) {
             System.out.println("Enter a number bigger than 2: ");
             n = scanner.nextInt();
         }
@@ -37,16 +37,16 @@ public class FibonacciBuggy {
         f.add(1);
         int i = 2;
         while (i < n) {
-            f.add(f.get(i - 1) + f.get(i - 1));
+            f.add(f.get(i - 1) + f.get(i - 2));
             i++;
         }
         return f;
     }
 
     private static void printList(List<Integer> fiboList) {
-        int i = 2;
-        while (i <= fiboList.size()) {
-            System.out.print(fiboList.get(i));
+        int i = 0;
+        while (i < fiboList.size()) {
+            System.out.print(fiboList.get(i) + ", ");
             i++;
         }
         System.out.println("...");
